@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+       const person = {
+        name: "佐科姐姐",
+        age: 1000000,
+        address: {
+        city: 'ChongQing',
+        area: 'NanShan'
+        },
+        title: ['student',{year:2022, title:'GoodStudent'}]
+       }
+       let name=person.name;
+       let year=person.age;
+       let city=person.address.city;
+       let mountain=person.address.area;
+       let title1=person.title[0];
+       let title2=person.title[1].title;
+       console.log(name); // 佐科姐姐
+       console.log(year); // 1000000 
+       console.log(city); // ChongQing
+       console.log(mountain); // NanShan //这里没有写错，就是要输出 NanShan，
+       console.log(title1); // student
+       console.log(title2); // GoodStudent
+</script>
+<body>
+ 
+</body>
+</html>

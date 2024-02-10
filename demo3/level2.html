@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 浅拷贝函数示例
+     function shallowCopy(obj) {
+      return Object.assign({}, obj);
+}
+
+      // 测试浅拷贝
+     let originalObj = { a: 1, b: { c: 2 } };
+     let shallowCopiedObj = shallowCopy(originalObj);
+
+    originalObj.b.c = 3; // 修改原始对象
+
+    console.log(originalObj);        // 输出: { a: 1, b: { c: 3 } }
+    console.log(shallowCopiedObj);   // 输出: { a: 1, b: { c: 3 } }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //循环
+    function factorial(n){
+        let sum=1;
+        for(let i=1;i<=n;i++){
+                sum*=i  ;  
+        }
+        return sum;
+    }
+    //阶乘
+    function factorial1(n){
+        let sum=1
+        if(n==1){
+            return n;
+        }
+        else
+           return  n*factorial1(n-1);
+    }
+    function Getlist(n){
+        let arr=[];
+        let str='';
+        for(let j=n;j>1;j--){
+            arr.push(j);
+        }
+        for(let i=0;i<arr.length;i++){
+            str+=arr[i]+'*';
+        }
+        str+='1';
+        return str;
+    }
+    let n=prompt("给出计算到阶乘的n值")
+    for(let i=1;i<=n;i++){
+        m=factorial(i);
+        console.log('factorial('+i+')='+Getlist(i)+'='+m);
+    }
+</script>
+<body>
+    
+</body>
+</html>
