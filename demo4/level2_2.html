@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function sleep(duration) {
+  return new Promise(resolve => setTimeout(resolve, duration));
+}
+
+async function trafficLight(color, duration) {
+  console.log(color);
+  await sleep(duration * 1000);
+}
+
+async function runTrafficLights() {
+  while (true) {
+    await Promise.all([
+      trafficLight('red', 3),
+      trafficLight('green', 1),
+      trafficLight('yellow', 2)
+    ]);
+  }
+}
+
+runTrafficLights();
+</script>
+<body>
+    
+</body>
+</html>

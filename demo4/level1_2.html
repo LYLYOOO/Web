@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  speak() {
+    console.log(`Person: Name - ${this.name}, Age - ${this.age}`);
+  }
+}
+
+class Student extends Person {
+  constructor(name, age, hobbies) {
+    super(name, age);
+    this.hobbies = hobbies;
+  }
+
+  speak() {
+    super.speak();
+    console.log(`Student: Name - ${this.name}, Age - ${this.age},Hobbies - ${this.hobbies.join(', ')}`);
+  }
+}
+
+const alice = new Person('Alice', 25);
+alice.speak();
+
+const bob = new Student('Bob', 20, ['Reading', 'Swimming', 'Coding']);
+bob.speak();
+</script>
+<body>
+    
+</body>
+</html>
