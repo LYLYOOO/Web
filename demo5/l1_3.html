@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+    
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: blue; /* 初始为蓝色 */
+        transition: all 1s; /* 设置过渡效果 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    </head>
+    <body>
+      <div class="circle">Start</div>
+      <script>
+        const circle = document.querySelector('.circle');
+    
+        function delay(duration) {
+          return new Promise(resolve => setTimeout(resolve, duration));
+        }
+    
+        async function animate() {
+          await delay(1000); // 等待1秒
+    
+          circle.style.backgroundColor = 'orange'; // 显示橙色圆形
+          circle.style.transform = 'rotate(20deg) translate(-50px, 50px)'; // 旋转20度并向左下移动50px
+    
+          await delay(1000); // 等待1秒
+    
+          circle.style.backgroundColor = 'gray'; // 切换成灰色
+          circle.style.transform = 'rotate(20deg) translate(-100px, 100px)'; // 继续旋转20度并向左下移动100px
+        }
+    
+        animate();
+      </script>
+    </body>
+    
+</html>

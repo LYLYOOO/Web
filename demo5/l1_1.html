@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: blue; /* 初始为蓝色 */
+            transition: all 1s; /* 设置过渡效果 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle">Start</div>
+    <script>
+        const circle = document.querySelector('.circle');
+
+        setTimeout(() => {
+            circle.style.backgroundColor = 'orange';
+            circle.style.transform = 'rotate(60deg) translate(-50px, 50px)';
+            setTimeout(() => {
+                circle.style.backgroundColor = 'gray';
+                circle.style.transform = 'rotate(40deg) translate(-100px, 100px)';
+            }, 1000); // 等待1秒后执行第二次旋转
+        }, 1000); // 等待1秒后执行第一次旋转
+    </script>
+</body>
+</html>

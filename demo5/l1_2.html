@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circle Animation</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blue; /* 初始为蓝色 */
+    transition: all 1s; /* 设置过渡效果 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+</head>
+<body>
+  <div class="circle">Start</div>
+  <script>
+    const circle = document.querySelector('.circle');
+
+    function changeColorAndMove(color, rotateValue, translateX, translateY, duration) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          circle.style.backgroundColor = color;
+          circle.style.transform = `rotate(${rotateValue}deg) translate(${translateX}px, ${translateY}px)`;
+          resolve();
+        }, duration);
+      });
+    }
+
+    async function animate() {
+      await changeColorAndMove('orange', 60, -50, 50, 1000); // 向左下移动50px
+      await changeColorAndMove('gray', 40, -100, 100, 1000); // 向左下移动100px
+    }
+
+    animate();
+  </script>
+</body>
+</html>
