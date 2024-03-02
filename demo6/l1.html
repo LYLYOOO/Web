@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Blocks</title>
+<style>
+    .color-block {
+        margin: 10px;
+        cursor: pointer;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+<div class="color-block" style="width: 100px; height: 100px; background-color: red;"></div>
+<div class="color-block" style="width: 150px; height: 150px; background-color: blue;"></div>
+<div class="color-block" style="width: 120px; height: 120px; background-color: green;"></div>
+
+<script>
+    const colorBlocks = document.querySelectorAll('.color-block');
+
+    function changeColor() {
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        this.style.backgroundColor = randomColor;
+    }
+
+    colorBlocks.forEach(colorBlock => {
+        colorBlock.addEventListener('click', changeColor);
+    });
+</script>
+</body>
+</html>

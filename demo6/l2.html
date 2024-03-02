@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留言板</title>
+<style>
+    .message {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .delete-btn {
+        color: red;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<h1>留言板</h1>
+<div id="message-list">
+    <!-- 留言将显示在这里 -->
+</div>
+<input type="text" id="new-message" placeholder="请输入留言内容">
+<button onclick="addMessage()">添加留言</button>
+<script>
+    let messages = [];
+
+    function renderMessages() {
+        const messageList = document.getElementById("message-list");
+        messageList.innerHTML = "";
+        messages.forEach((message, index) => {
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message");
+            messageDiv.innerText = message.content;
+            const deleteBtn = document.createElement("span");
+            deleteBtn.classList.add("delete-btn");
+            deleteBtn.innerText = " 删除";
+            // 添加点击事件，点击时删除该留言
+            deleteBtn.onclick = () => {
+                messages.splice(index, 1);
+                renderMessages();
+            };
+            messageDiv.appendChild(deleteBtn);
+            messageList.appendChild(messageDiv);
+        });
+    }
+
+    function addMessage() {
+        const newMessage = document.getElementById("new-message").value;
+        if (newMessage.trim() !== "") {
+            messages.push({content: newMessage});
+            renderMessages();
+            document.getElementById("new-message").value = "";
+        } else {
+            alert("请先输入留言内容");
+        }
+    }
+</script>
+</body>
+</html>
