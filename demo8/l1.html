@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气预报页面</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    window.addEventListener("resize", ()=>{
+ // 正常方向或屏幕旋转 180 度
+if (window.orientation === 180 || window.orientation === 0) { 
+ console.log('竖屏');
+ };
+ if (window.orientation === 90 || window.orientation === -90 ){
+ // 屏幕顺时钟旋转 90 度或屏幕逆时针旋转 90 度
+ console.log('横屏');
+ }
+ });
+</script>
+<body>
+    <div class="weather-app">
+        <!-- 搜索板块 -->
+        <div class="search-section">
+            <input type="text" id="city-search" placeholder="输入城市名查询天气..."> <!-- 在此处输入城市名进行查询 -->
+            <button id="search-btn">搜索</button> <!-- 点击按钮进行搜索 -->
+        </div>
+
+        <!-- 默认城市温度显示板块 -->
+        <div class="default-city-temp">
+            <h2>南岸区温度</h2>
+            <p class="temp-value">24°C</p> <!-- 默认城市温度会显示在这里 -->
+        </div>
+
+        <!-- 温度变化板块 -->
+        <div class="hourly-temp-changes">
+            <h3>小时温度变化</h3>
+            <ul class="temp-list">
+                <!-- 实际温度数据将会在这里显示 -->
+                <li>00:00 - 22°C</li>
+                <li>01:00 - 21°C</li>
+                <li>02:00 - 20°C</li>
+                <!-- ...更多数据 -->
+            </ul>
+        </div>
+
+        <!-- 额外板块：未来几天天气预报 -->
+        <div class="future-forecast">
+            <h3>未来几天天气</h3>
+            <div class="future-days">
+                <!-- 这里可以插入天气图标，例如晴天、多云等 -->
+                <!-- 实际未来几天天气数据将在这里显示 -->
+                <div class="day-forecast">
+                    <p>周一</p>
+                    <img src="sun.png" alt="晴天">
+                    <p>25°C</p>
+                </div>
+                <!-- ...更多数据 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

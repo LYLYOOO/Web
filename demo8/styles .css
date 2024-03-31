@@ -1,0 +1,69 @@
+html {
+    font-size: 62.5%; /* root font-size at 10px */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem; /* base font-size will be 16px */
+}
+
+.weather-app {
+    max-width: 480px;
+    margin: auto;
+}
+
+.search-section,
+.default-city-temp,
+.hourly-temp-changes,
+.future-forecast {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-section input {
+    width: 70%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.search-section button {
+    padding: 1rem 2rem;
+    background: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.temp-list {
+    list-style: none;
+    padding: 0;
+}
+
+.temp-list li {
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+}
+
+.future-forecast .future-days {
+    display: flex;
+    justify-content: space-around;
+}
+
+.future-forecast .day-forecast {
+    text-align: center;
+}
+
+.future-forecast .day-forecast img {
+    width: 50px;
+    height: 50px;
+    margin: 0.5rem 0;
+}
